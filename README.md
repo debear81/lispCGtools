@@ -1,16 +1,27 @@
-LISP routine for AutoCAD 3D (2020) that calculates and marks the center of gravity of one or more 3D solid elements that may or may not be of differing material densities (concrete, steel, etc.).
+# LISP CG Tools for AutoCAD
 
-This was initially written to assist in the planning and calculation for erection / lifting procedures.
+AutoLISP tools for calculating and documenting centroid / center-of-gravity properties in AutoCAD (2024).
 
-Dialog boxes are defined in the *.DCL file.
+## Commands
 
-Routine does the following:
-- prompt user to select one or more 3D solids
-- note the centroid, volume, and layer of each element
-- initiate a dialog box for the user to enter the densities (lb / cu. ft. or other) of each noted layer
-- calculate the composite center of gravity
-- export the information to a CSV file for documentation and verification
+### CG2D
+Calculates centroidal section properties for closed 2D polylines and regions. Exports results to CSV and places centroid markers in model space.
 
-![CG](https://github.com/user-attachments/assets/1a3acd95-4496-49d4-aeb5-26789909f9ea)
+### CG3D
+Calculates the combined center of gravity of one or more 3DSOLIDs with user-defined material densities. Exports results to CSV and places a CG marker sphere in model space.
 
-Video of sample use: https://youtu.be/bLOZLg_tG28
+## Installation
+
+1. Download the files in the `/Source` folder.
+2. Copy all `.lsp` and `.dcl` files into the same folder.
+3. Add that folder to AutoCAD Support File Search Path.
+4. Load `CG_2D.lsp` and/or `CG_3D.lsp` with `APPLOAD`.
+5. Run `CG2D` or `CG3D`.
+
+## Documentation
+
+See `/Docs/LISP CG tools guide.pdf`.
+
+## Current Status
+
+Beta / work in progress. Verify all output independently before use.
